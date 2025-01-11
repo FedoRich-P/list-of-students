@@ -14,7 +14,7 @@ export const StyledContainer = styled(Box)(({ theme }) => ({
 }));
 
 export const StyledTitle = styled(Typography)(({ theme }) => ({
-    marginBottom: 2,
+    marginBottom: theme.spacing(2),
     textAlign: "center",
 }));
 
@@ -54,6 +54,7 @@ export const StyledButton = styled(Button)(({ theme }) => ({
 }));
 
 export const SearchButton = styled(StyledButton)(({ theme }) => ({
+    marginBottom: theme.spacing(0),
     backgroundColor: "#3f51b5",
     color: "white",
     "&:hover": {
@@ -62,6 +63,7 @@ export const SearchButton = styled(StyledButton)(({ theme }) => ({
 }));
 
 export const ShowAllButton = styled(StyledButton)(({ theme }) => ({
+    marginBottom: theme.spacing(0),
     backgroundColor: "#fff",
     "&:hover": {
         backgroundColor: "#ddd",

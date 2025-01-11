@@ -27,6 +27,7 @@ export const StyledButton = styled(Button)(({ theme }) => ({
 }));
 
 export const ShowSomeButton = styled(StyledButton)(({ theme }) => ({
+    marginTop: theme.spacing(0),
     backgroundColor: "#3f51b5",
     color: "white",
     "&:hover": {
@@ -35,6 +36,7 @@ export const ShowSomeButton = styled(StyledButton)(({ theme }) => ({
 }));
 
 export const ShowAllButton = styled(StyledButton)(({ theme }) => ({
+    marginTop: theme.spacing(0),
     backgroundColor: "#fff",
     "&:hover": {
         backgroundColor: "#ddd",
