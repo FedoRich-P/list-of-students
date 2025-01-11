@@ -1,16 +1,22 @@
-import { Dialog, DialogActions, DialogContent, DialogTitle, Button } from '@mui/material';
-import {ModalProps} from "../../types/types.ts";
+import { Button } from '@mui/material';
+import { ModalProps } from "../../types/types.ts";
+import {
+    StyledDialog,
+    StyledDialogTitle,
+    StyledDialogContent,
+    StyledDialogActions,
+} from "./Modal.styles";
 
 export const Modal = ({ isOpen, onClose, children }: ModalProps) => {
     return (
-        <Dialog open={isOpen} onClose={onClose}>
-            <DialogTitle>Добавить студента</DialogTitle>
-            <DialogContent>{children}</DialogContent>
-            <DialogActions>
+        <StyledDialog open={isOpen} onClose={onClose}>
+            <StyledDialogTitle>Добавить студента</StyledDialogTitle>
+            <StyledDialogContent>{children}</StyledDialogContent>
+            <StyledDialogActions>
                 <Button onClick={onClose} color="primary">
                     Закрыть
                 </Button>
-            </DialogActions>
-        </Dialog>
+            </StyledDialogActions>
+        </StyledDialog>
     );
 };
