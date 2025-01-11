@@ -19,10 +19,6 @@ export type StudentType = StudentBase & {
     yearsOfStudy?: string[];
 };
 
-export type StudentForTable = Omit<StudentBase, 'id' | 'gender'> & {
-    yearsOfStudy: string[];
-};
-
 // ====================================================
 //  Add Form Types
 export type AddFormProps = {
@@ -87,7 +83,6 @@ export type TableFooterProps = {
 export type TableHeaderProps = {
     sortBy: keyof StudentType;
     sortDirection: boolean;
-    // sortDirection: 'asc' | 'desc';
     onSort: (column: keyof StudentType) => void;
 };
 
@@ -97,12 +92,5 @@ export type TableBodyComponentProps = {
     students: StudentType[];
 };
 
-// ====================================================
-//  Sort Utility Types
-export type SortArrayProps = {
-    students: StudentType[];
-    property: keyof StudentType;
-    ascending: boolean;
-};
 
 

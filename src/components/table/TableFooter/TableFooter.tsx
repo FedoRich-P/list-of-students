@@ -1,14 +1,14 @@
-import { TableRow, TableCell, Table, TableBody, TableHead, Box, Typography } from '@mui/material';
+import { TableRow, TableCell, Table, TableBody, TableHead, Typography } from '@mui/material';
 import { TableFooterProps } from "../../../types/types.ts";
 import {HiddenTableCell, StyledBox} from "./TableFooter.styles.ts";
 
 export const TableFooter = ({ facultyCounts, studyingCounts, graduatedCounts, totalCounts }: TableFooterProps) => {
     if (!facultyCounts || !studyingCounts || !graduatedCounts || !totalCounts) {
         return (
-            <Box sx={{ marginTop: '20px', padding: 2, boxShadow: 3 }}>
+            <StyledBox>
                 <Typography variant="h6" sx={{ marginBottom: '10px' }}>Статистика по факультетам:</Typography>
                 <Typography color="error">Данные не загружены.</Typography>
-            </Box>
+            </StyledBox>
         );
     }
 
