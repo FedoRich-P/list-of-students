@@ -1,11 +1,12 @@
 import {useState} from 'react';
-import {Container, Button, Typography, Box} from '@mui/material';
+import {Container, Typography, Box} from '@mui/material';
 import {Modal} from "./components/Modal/Modal.tsx";
 import {AddForm} from "./components/AddForm/AddForm.tsx";
 import {StudentBase, StudentType} from "./types/types.ts";
 import {Student} from "./models/Student.ts";
 import {initialStudents} from "./data/data.ts";
 import {Table} from "./components/table/Table/Table.tsx";
+import {AddButton} from "./components/AddForm/AddForm.styles.ts";
 
 const App = () => {
     const initialStudentsList = initialStudents.map((student: StudentType) => {
@@ -30,15 +31,14 @@ const App = () => {
     };
 
     return (
-
         <Container maxWidth="xl">
                 <Box sx={{margin: '20px 0'}}>
                     <Typography variant="h4" gutterBottom>
                         Студенты
                     </Typography>
-                    <Button variant="contained" color="primary" onClick={() => setIsModalOpen(true)}>
+                    <AddButton variant="contained" onClick={() => setIsModalOpen(true)}>
                         Добавить студента
-                    </Button>
+                    </AddButton>
                 </Box>
 
                 <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>

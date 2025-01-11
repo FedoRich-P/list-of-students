@@ -1,11 +1,12 @@
-import { useState } from 'react';
-import { Box, Table as TableFromUi, TableContainer, TableHead, TableBody as TableBodyFromUi, Button } from '@mui/material';
-import { sortArray } from "../../../utils/sortUtils.ts";
-import { SearchBar } from "../../SearchBar/SearchBar.tsx";
-import { TableBody } from "../TableBody/TableBody.tsx";
-import { TableFooter } from "../TableFooter/TableFooter.tsx";
-import { TableHeader } from "../TableHeader/TableHeader.tsx";
-import { StudentTableProps } from "../../../types/types.ts";
+import {useState} from 'react';
+import {Box, Table as TableFromUi, TableBody as TableBodyFromUi, TableContainer, TableHead} from '@mui/material';
+import {sortArray} from "../../../utils/sortUtils.ts";
+import {SearchBar} from "../../SearchBar/SearchBar.tsx";
+import {TableBody} from "../TableBody/TableBody.tsx";
+import {TableFooter} from "../TableFooter/TableFooter.tsx";
+import {TableHeader} from "../TableHeader/TableHeader.tsx";
+import {StudentTableProps} from "../../../types/types.ts";
+import {ShowAllButton, ShowSomeButton, StyledButtonContainer} from "./Table.styles.ts";
 
 export const Table = ({ students, sortBy, sortDirection, onSort }: StudentTableProps) => {
     const [filters, setFilters] = useState({
@@ -108,18 +109,18 @@ export const Table = ({ students, sortBy, sortDirection, onSort }: StudentTableP
                 </TableFromUi>
             </TableContainer>
 
-            <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', marginBottom: '20px' }}>
+            <StyledButtonContainer >
                 {visibleStudentsCount < sortedStudents.length && (
                     <>
-                        <Button variant="contained" onClick={showMoreStudents}>
+                        <ShowSomeButton variant="contained" onClick={showMoreStudents}>
                             Показать ещё 10
-                        </Button>
-                        <Button variant="outlined" onClick={showAllStudents}>
+                        </ShowSomeButton>
+                        <ShowAllButton variant="outlined" onClick={showAllStudents}>
                             Показать всех
-                        </Button>
+                        </ShowAllButton>
                     </>
                 )}
-            </Box>
+            </StyledButtonContainer>
 
             <TableFooter
                 facultyCounts={facultyCounts}

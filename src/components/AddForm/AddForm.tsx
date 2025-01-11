@@ -1,10 +1,10 @@
-import { Box, Button } from '@mui/material';
-import Grid from '@mui/material/Grid';
+import {Box, Button, Grid} from '@mui/material';
 import { useFormik } from 'formik';
 import { AddFormProps } from '../../types/types';
 import { validationSchema } from '../../utils/validate';
 import { TextFieldWithFormik } from './TextFieldWithFormik';
 import { Student } from "../../models/Student.ts";
+import {AddButton} from "./AddForm.styles.ts";
 
 const initialValues = {
     name: '',
@@ -28,8 +28,8 @@ export const AddForm = ({ onAddStudent }: AddFormProps) => {
     });
 
     return (
-        <Box sx={{ padding: '20px' }}>
-            <form onSubmit={formik.handleSubmit}>
+        <Box sx={{ padding: '20px', backgroundColor: "wheat" }}>
+            <form onSubmit={formik.handleSubmit} >
                 <Grid container spacing={2}>
                     <Grid item xs={12}>
                         <TextFieldWithFormik label="Фамилия" name="lastname" formik={formik} />
@@ -53,9 +53,9 @@ export const AddForm = ({ onAddStudent }: AddFormProps) => {
                         <TextFieldWithFormik label="Пол" name="gender" formik={formik} />
                     </Grid>
                     <Grid item xs={12}>
-                        <Button type="submit" variant="contained" color="primary">
+                        <AddButton type="submit">
                             Добавить студента
-                        </Button>
+                    </AddButton>
                     </Grid>
                 </Grid>
             </form>
